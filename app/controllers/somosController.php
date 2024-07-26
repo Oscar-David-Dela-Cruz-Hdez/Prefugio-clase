@@ -4,7 +4,7 @@ use app\models\mainModel;
 
 class somosController extends mainModel {
     public function traerInfoMision() {
-        return $this->traerInfoMision();
+        return parent::traerInfoMision();
     }
 }
 ?>

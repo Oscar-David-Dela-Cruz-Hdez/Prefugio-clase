@@ -4,7 +4,7 @@ require_once "./config/server.php";
 use app\controllers\somosController;
 
 $somosController = new somosController();
-$infoSomos = somosController ->traerInfoMision();
+$infoSomos = $somosController ->traerInfoMision();
 ?>
 <section class="right" id="">
     <h2>Mision De nuestra empresa</h2>

@@ -39,25 +39,20 @@ Construcción del modelo principal*/
 
         public function traerInfoMision() {
             // Prepara la consulta SQL
-            $sql = "SELECT descripcion FROM tblmision";
-            $stmt = $this->conexion->prepare($sql);
-            $stmt->execute();
-    
-            // Obtener el resultado
-            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+            $sql = $this->conectar()->prepare("SELECT descripcion FROM tblmision");
+            $sql->execute();
+            $resultado = $sql->fetch(PDO::FETCH_ASSOC);
             return $resultado;
         }
 
         public function traerInfoVision() {
-            $sql = "SELECT descripcion FROM tblvision";
-            $stmt = $this->conexion->prepare($sql);
-            $stmt->execute();   
-            
-            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+            // Llamar al método conectar() correctamente
+            $sql = $this->conectar()->prepare("SELECT descripcion FROM tblvision");
+            $sql->execute();
+            $resultado = $sql->fetch(PDO::FETCH_ASSOC);
             return $resultado;
         }
+        
         
         //Modelo para hacer extraer palabras que pudieran generar inyección
         //Dentro de las clases instanciadas y fuera de ellas

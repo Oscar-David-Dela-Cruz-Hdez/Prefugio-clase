@@ -4,7 +4,7 @@ use app\models\mainModel;
 
 class visionController extends mainModel {
     public function traerInfoVision() {
-        return $this->traerInfoVision();
+        return parent::traerInfoVision();
     }
 }
 ?>
